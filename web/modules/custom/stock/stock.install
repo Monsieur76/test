@@ -1,0 +1,27 @@
+<?php
+
+//use Drupal\Core\Database\Database;
+
+/**
+ * Add the default configuration for messages.
+ */
+
+//function stock_install() {
+//  stock_update_8001();
+//}
+
+//function stock_update_8001() {
+//  $spec = [
+ //   'type' => 'int',
+ //   'description' => "Stock Qty",
+    //'length' => 1000,
+ //   'not null' => TRUE,
+ //   'default' => 0,
+ // ]; 
+ // $schema = Database::getConnection()->schema();
+ //  if ($schema->fieldExists('commerce_product_field_data',"qty")){
+
+ //  }else{
+ //   $schema->addField('commerce_product_field_data', 'qty', $spec);
+ //  }
+//}

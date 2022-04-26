@@ -1,0 +1,10 @@
+services:
+  stock.variation_availability_checker:
+    class: Drupal\stock\VariationAvailabilityChecker
+    tags:
+      - { name: commerce_order.availability_checker, priority: 100 }
+
+  stock.stock_order_processor:
+    class: Drupal\stock\OrderProcessor\StockOrderProcessor
+    tags:
+      - { name: commerce_order.order_processor, priority: 300 }

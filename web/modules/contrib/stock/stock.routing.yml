@@ -1,0 +1,8 @@
+stock.stock_page:
+  path: /ma_page
+  defaults:
+    _controller: '\Drupal\stock\Controller\StockController::stock'
+    _tittle: 'Page de stock'
+  requirements:
+    _permission: 'access commerce stock administration pages'
+

@@ -1,0 +1,13 @@
+{
+    "name": "stock",
+    "type": "drupal-module",
+    "description": "gestion de la quantité du stock",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/stock",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/stock",
+        "source": "http://cgit.drupalcode.org/stock",
+    },
+}

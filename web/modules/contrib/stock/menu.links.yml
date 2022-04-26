@@ -1,0 +1,4 @@
+stock.ma_page_menu:
+  title: 'Stock'
+  route_name: stock.ma_page
+  menu_main: main_menu

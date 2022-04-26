@@ -1,0 +1,26 @@
+<?php
+
+use Drupal\commerce\Context;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function stock_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (strpos($form_id, 'commerce_order_item_add_to_cart_form') !== FALSE) {
+    $order_item = $form_state->getFormObject()->getEntity();
+    
+    /** @var \Drupal\stock\VariationAvailabilityChecker $variation_availability_checker */
+    $variation_availability_checker = \Drupal::service('stock.variation_availability_checker');
+
+    $current_user = \Drupal::currentUser();
+    $current_store = \Drupal::service('commerce_store.current_store')->getStore();
+    $context = new Context($current_user, $current_store);
+
+
+    if ($variation_availability_checker->check($order_item, $context)->isUnavailable()) {
+      $form['actions']['submit']['#value'] = t('Out of stock');
+      $form['actions']['submit']['#disabled'] = TRUE;
+    }
+  }
+}
